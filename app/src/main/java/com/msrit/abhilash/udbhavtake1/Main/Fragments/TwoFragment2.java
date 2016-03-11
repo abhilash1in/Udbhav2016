@@ -15,7 +15,7 @@ import com.msrit.abhilash.udbhavtake1.Main.Activities.EventDetailsActivity;
 import com.msrit.abhilash.udbhavtake1.Main.Data.Data;
 import com.msrit.abhilash.udbhavtake1.Main.Data.EventData;
 import com.msrit.abhilash.udbhavtake1.Main.Data.ItemData;
-import com.msrit.abhilash.udbhavtake1.Main.Interface.MyAdapter;
+import com.msrit.abhilash.udbhavtake1.Main.Interface.MyAdapterEvents;
 import com.msrit.abhilash.udbhavtake1.Main.Interface.RecyclerItemClickListener;
 import com.msrit.abhilash.udbhavtake1.Old.OneFragment;
 import com.msrit.abhilash.udbhavtake1.R;
@@ -80,7 +80,7 @@ public class TwoFragment2 extends android.support.v4.app.Fragment{
 
         /*UltimateRecyclerView ultimateRecyclerView = (UltimateRecyclerView) root.findViewById(R.id.ultimate_recycler_view);
         ultimateRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        final MyAdapter mAdapter = new MyAdapter(events);
+        final MyAdapterEvents mAdapter = new MyAdapterEvents(events);
         ultimateRecyclerView.setAdapter(mAdapter);
         ultimateRecyclerView.setItemAnimator(new DefaultItemAnimator());
  *//*       ultimateRecyclerView.setOnClickListener(
@@ -99,7 +99,7 @@ public class TwoFragment2 extends android.support.v4.app.Fragment{
 
         final RecyclerView recyclerView = (RecyclerView) root.findViewById(R.id.recyclerViewTwo);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        MyAdapter mAdapter = new MyAdapter(events);
+        MyAdapterEvents mAdapter = new MyAdapterEvents(events);
         recyclerView.setAdapter(mAdapter);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.addOnItemTouchListener(

@@ -15,20 +15,35 @@ import com.msrit.abhilash.udbhavtake1.R;
 import java.util.List;
 
 
+import android.graphics.Color;
+import android.support.v7.widget.CardView;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.msrit.abhilash.udbhavtake1.Main.Data.ItemData;
+import com.msrit.abhilash.udbhavtake1.R;
+
+import java.util.List;
+
+
 /**
  * Created by Abhilash on 11/12/2015.
  */
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
-/*
-    private ItemData[] itemsData;
-*/
+public class MyAdapterEvents extends RecyclerView.Adapter<MyAdapterEvents.ViewHolder> {
+    /*
+        private ItemData[] itemsData;
+    */
     public List<ItemData> nitemsData;
 
        /* public MyAdapter(ItemData[] itemsData) {
             this.itemsData = itemsData;
         }*/
 
-    public MyAdapter(List<ItemData> nitemsData){
+    public MyAdapterEvents(List<ItemData> nitemsData){
         this.nitemsData=nitemsData;
     }
 
@@ -37,10 +52,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         notifyItemRemoved(position);
     }
 
-    public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,int viewType) {
+    public MyAdapterEvents.ViewHolder onCreateViewHolder(ViewGroup parent,
+                                                   int viewType) {
         // create a new view
         View itemLayoutView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.card2, null);
+                .inflate(R.layout.card, null);
 
         // create ViewHolder
 
@@ -63,6 +79,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         viewHolder.txtViewTitle.setText(nitemsData.get(position).getTitle());
         viewHolder.txtViewTitle.setSelected(true);
+        viewHolder.description.setText(nitemsData.get(position).getDescription());
         if(nitemsData.get(position).getImageUrl()==0)
         {
             viewHolder.imgViewIcon.setImageDrawable(null);
@@ -124,6 +141,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         public TextView txtViewTitle;
         public ImageView imgViewIcon;
+        public TextView description;
         public CardView cardView;
 
         public ViewHolder(View itemLayoutView) {
@@ -131,6 +149,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             itemLayoutView.setOnClickListener(this);
             txtViewTitle = (TextView) itemLayoutView.findViewById(R.id.card_item_title);
             imgViewIcon = (ImageView) itemLayoutView.findViewById(R.id.card_item_icon);
+            description = (TextView) itemLayoutView.findViewById(R.id.card_item_description);
             cardView = (CardView) itemLayoutView.findViewById(R.id.card_view);
             /*log("ViewHolder called");*/
         }

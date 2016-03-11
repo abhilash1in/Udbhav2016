@@ -60,8 +60,9 @@
 
             <include layout="@layout/event_rules" android:id="@+id/rulesLayout"/>
 
+<!--
             <include layout="@layout/registerbutton" android:id="@+id/registerButton"/>
-
+-->
             <include layout="@layout/event_contact" android:id="@+id/contactLayout"/>
 
             <android.support.design.widget.CoordinatorLayout

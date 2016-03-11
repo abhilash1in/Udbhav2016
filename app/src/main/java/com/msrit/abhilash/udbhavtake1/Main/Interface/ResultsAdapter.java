@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.msrit.abhilash.udbhavtake1.Main.Data.ItemData;
 import com.msrit.abhilash.udbhavtake1.R;
+import com.parse.ParseObject;
 
 import java.util.List;
 
@@ -18,29 +19,17 @@ import java.util.List;
 /**
  * Created by Abhilash on 11/12/2015.
  */
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
-/*
-    private ItemData[] itemsData;
-*/
-    public List<ItemData> nitemsData;
+public class ResultsAdapter extends RecyclerView.Adapter<ResultsAdapter.ViewHolder> {
 
-       /* public MyAdapter(ItemData[] itemsData) {
-            this.itemsData = itemsData;
-        }*/
+    public List<ParseObject> nitemsData;
 
-    public MyAdapter(List<ItemData> nitemsData){
+    public ResultsAdapter(List<ParseObject> nitemsData){
         this.nitemsData=nitemsData;
     }
 
-    public void delete(int position){
-        nitemsData.remove(position);
-        notifyItemRemoved(position);
-    }
-
-    public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,int viewType) {
+    public ResultsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,int viewType) {
         // create a new view
-        View itemLayoutView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.card2, null);
+        View itemLayoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.results_card, null);
 
         // create ViewHolder
 
@@ -61,16 +50,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         // - get data from your itemsData at this position
         // - replace the contents of the view with that itemsData
 
-        viewHolder.txtViewTitle.setText(nitemsData.get(position).getTitle());
+        viewHolder.txtViewTitle.setText(nitemsData.get(position).getString("event_name"));
         viewHolder.txtViewTitle.setSelected(true);
-        if(nitemsData.get(position).getImageUrl()==0)
-        {
-            viewHolder.imgViewIcon.setImageDrawable(null);
-        }
-        else if(nitemsData.get(position).getImageUrl()!=0)
-        {
-            viewHolder.imgViewIcon.setImageResource(nitemsData.get(position).getImageUrl());
-        }
 
         /*if(nitemsData.get(position).getImageUrl()==0)
         {
@@ -123,15 +104,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         public TextView txtViewTitle;
-        public ImageView imgViewIcon;
         public CardView cardView;
 
         public ViewHolder(View itemLayoutView) {
             super(itemLayoutView);
             itemLayoutView.setOnClickListener(this);
-            txtViewTitle = (TextView) itemLayoutView.findViewById(R.id.card_item_title);
-            imgViewIcon = (ImageView) itemLayoutView.findViewById(R.id.card_item_icon);
-            cardView = (CardView) itemLayoutView.findViewById(R.id.card_view);
+            txtViewTitle = (TextView) itemLayoutView.findViewById(R.id.event_name);
+            cardView = (CardView) itemLayoutView.findViewById(R.id.results_card_view);
             /*log("ViewHolder called");*/
         }
         @Override

@@ -9,7 +9,9 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
+import com.msrit.abhilash.udbhavtake1.Main.Fragments.AboutRootFragment;
 import com.msrit.abhilash.udbhavtake1.Main.Fragments.RegisterFragment;
+import com.msrit.abhilash.udbhavtake1.Main.Fragments.ResultsRootFragment;
 import com.msrit.abhilash.udbhavtake1.Main.Fragments.RootFragment;
 import com.msrit.abhilash.udbhavtake1.Main.Fragments.StaticFragment;
 import com.msrit.abhilash.udbhavtake1.R;
@@ -17,7 +19,7 @@ import com.msrit.abhilash.udbhavtake1.R;
 public class Home2 extends AppCompatActivity {
 
     // For this example, only two pages
-    static final int NUM_ITEMS = 2;
+    static final int NUM_ITEMS = 3;
 
     private Toolbar toolbar;
     static ViewPager mPager;
@@ -69,8 +71,11 @@ public class Home2 extends AppCompatActivity {
 			 */
             if (position == 0)
                 return new RootFragment();
+            else if (position == 1)
+                return new ResultsRootFragment();
             else
-                return new RegisterFragment();
+                return new AboutRootFragment();
+                /*return new RegisterFragment();*/
         }
 
         @Override
@@ -83,7 +88,9 @@ public class Home2 extends AppCompatActivity {
             if(position==0)
                 return "Events";
             else if(position==1)
-                return "Register";
+                return "Results";
+            else if(position==2)
+                return "About";
             return "Heading";
 
         }

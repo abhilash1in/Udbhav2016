@@ -35,11 +35,13 @@ public class EventDetailsActivity extends AppCompatActivity {
     View timingsLayout;
     View rulesLayout;
     View contactLayout;
+/*
     View registerButtonLayout;
+*/
     TextView date,time,location,rules,coordinator;
     String phoneNumber;
     ImageView call,sms,whatsapp;
-    Button register;
+    /*Button register;*/
     EventData event = TwoFragment2.ParticularEvent;
 
 
@@ -85,7 +87,7 @@ public class EventDetailsActivity extends AppCompatActivity {
         timingsLayout = findViewById(R.id.timingsLayout);
         rulesLayout = findViewById(R.id.rulesLayout);
         contactLayout = findViewById(R.id.contactLayout);
-        registerButtonLayout = findViewById(R.id.registerButton);
+        /*registerButtonLayout = findViewById(R.id.registerButton);*/
 
         date = (TextView) timingsLayout.findViewById(R.id.date);
         time = (TextView) timingsLayout.findViewById(R.id.time);
@@ -95,7 +97,7 @@ public class EventDetailsActivity extends AppCompatActivity {
 
 
 
-        register =(Button) registerButtonLayout.findViewById(R.id.rButton);
+        /*register =(Button) registerButtonLayout.findViewById(R.id.rButton);
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -104,7 +106,7 @@ public class EventDetailsActivity extends AppCompatActivity {
                 intent.putExtra("EXTRA_PAGE", 1);
                 startActivity(intent);
             }
-        });
+        });*/
 
         coordinator = (TextView) contactLayout.findViewById(R.id.coordinator);
         call = (ImageView) contactLayout.findViewById(R.id.call);

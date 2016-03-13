@@ -18,10 +18,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
-
-
-        >
+        android:layout_marginBottom="15dp">
 
         <ImageView
             android:id="@+id/card_item_icon"
@@ -36,6 +33,9 @@
             android:id="@+id/card_item_title"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:layout_alignTop="@id/card_item_icon"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="5dp"
@@ -44,30 +44,12 @@
             android:layout_toLeftOf="@id/card_item_icon"
             android:textColor="@android:color/white"
             android:text="Item name comes here"
-            android:singleLine="true"
             android:focusable="true"
-            android:ellipsize="marquee"
-            android:marqueeRepeatLimit ="marquee_forever"
             android:focusableInTouchMode="true"
             android:scrollHorizontally="true"/>
 
         <!--android:ellipsize="marquee"
         android:marqueeRepeatLimit ="marquee_forever"-->
-
-        <TextView
-            android:id="@+id/card_item_description"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/card_item_title"
-            android:layout_toLeftOf="@id/card_item_icon"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="20dp"
-            android:text=""
-            android:textSize="15dp"
-            android:textColor="@android:color/white"
-            />
-
 
     </RelativeLayout>
     </android.support.v7.widget.CardView>

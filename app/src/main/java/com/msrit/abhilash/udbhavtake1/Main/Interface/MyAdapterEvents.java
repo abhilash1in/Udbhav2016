@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.msrit.abhilash.udbhavtake1.Main.Data.ItemData;
 import com.msrit.abhilash.udbhavtake1.R;
 
+import java.util.Iterator;
 import java.util.List;
 
 
@@ -37,6 +38,7 @@ public class MyAdapterEvents extends RecyclerView.Adapter<MyAdapterEvents.ViewHo
     /*
         private ItemData[] itemsData;
     */
+    final int HEADING =1,EVENT=0;
     public List<ItemData> nitemsData;
 
        /* public MyAdapter(ItemData[] itemsData) {
@@ -44,6 +46,11 @@ public class MyAdapterEvents extends RecyclerView.Adapter<MyAdapterEvents.ViewHo
         }*/
 
     public MyAdapterEvents(List<ItemData> nitemsData){
+        nitemsData.add(0,new ItemData("Inter-College events",0,null,true));
+        int n=1;
+        while(nitemsData.get(n).isInter())
+            n++;
+        nitemsData.add(n,new ItemData("Intra-College events",0,null,true));
         this.nitemsData=nitemsData;
     }
 
@@ -54,13 +61,24 @@ public class MyAdapterEvents extends RecyclerView.Adapter<MyAdapterEvents.ViewHo
 
     public MyAdapterEvents.ViewHolder onCreateViewHolder(ViewGroup parent,
                                                    int viewType) {
+
+        View itemLayoutView;
+        ViewHolder viewHolder;
         // create a new view
-        View itemLayoutView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.card, null);
+        if(viewType == EVENT)
+        {
+            itemLayoutView = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.card, null);
+            viewHolder = new ViewHolder(itemLayoutView);
+        }
+        else
+        {
+            itemLayoutView = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.card, null);
+            viewHolder = new ViewHolder(itemLayoutView);
+        }
 
         // create ViewHolder
-
-        ViewHolder viewHolder = new ViewHolder(itemLayoutView);
         /*log("OnCreateViewHolder");*/
 
         return viewHolder;
@@ -77,11 +95,23 @@ public class MyAdapterEvents extends RecyclerView.Adapter<MyAdapterEvents.ViewHo
         // - get data from your itemsData at this position
         // - replace the contents of the view with that itemsData
 
+        if(getItemViewType(position)==HEADING)
+        {
+
+        }
+        else
+        {
+
+        }
+
         viewHolder.txtViewTitle.setText(nitemsData.get(position).getTitle());
         viewHolder.txtViewTitle.setSelected(true);
+/*
         viewHolder.description.setText(nitemsData.get(position).getDescription());
+*/
         if(nitemsData.get(position).getImageUrl()==0)
         {
+            viewHolder.imgViewIcon.setVisibility(View.GONE);
             viewHolder.imgViewIcon.setImageDrawable(null);
         }
         else if(nitemsData.get(position).getImageUrl()!=0)
@@ -136,12 +166,28 @@ public class MyAdapterEvents extends RecyclerView.Adapter<MyAdapterEvents.ViewHo
 
     }
 
+    public int getItemViewType (int position) {
+        //Some logic to know which type will come next;
+        if(position==0)
+            return HEADING;
+        else
+            return EVENT;
+    }
+
     // inner class to hold a reference to each item of RecyclerView
+    public class GeneralViewHolder extends RecyclerView.ViewHolder
+    {
+        public GeneralViewHolder(View itemView) {
+            super(itemView);
+        }
+    }
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         public TextView txtViewTitle;
         public ImageView imgViewIcon;
+/*
         public TextView description;
+*/
         public CardView cardView;
 
         public ViewHolder(View itemLayoutView) {
@@ -149,7 +195,9 @@ public class MyAdapterEvents extends RecyclerView.Adapter<MyAdapterEvents.ViewHo
             itemLayoutView.setOnClickListener(this);
             txtViewTitle = (TextView) itemLayoutView.findViewById(R.id.card_item_title);
             imgViewIcon = (ImageView) itemLayoutView.findViewById(R.id.card_item_icon);
+/*
             description = (TextView) itemLayoutView.findViewById(R.id.card_item_description);
+*/
             cardView = (CardView) itemLayoutView.findViewById(R.id.card_view);
             /*log("ViewHolder called");*/
         }

@@ -8,6 +8,15 @@ import android.widget.TextView;
 public class EventData {
     private String event_name,date,time,venue,rules,coordinator,phone;
     int size;
+    boolean inter =false; //true=interEvent, false=intraEvent
+
+    public boolean isInter() {
+        return inter;
+    }
+
+    public void setInter(boolean inter) {
+        this.inter = inter;
+    }
 
     public void setDate(String date) {
         this.date = date;

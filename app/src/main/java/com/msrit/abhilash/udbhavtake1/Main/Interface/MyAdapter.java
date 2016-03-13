@@ -65,6 +65,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         viewHolder.txtViewTitle.setSelected(true);
         if(nitemsData.get(position).getImageUrl()==0)
         {
+            viewHolder.imgViewIcon.setVisibility(View.GONE);
             viewHolder.imgViewIcon.setImageDrawable(null);
         }
         else if(nitemsData.get(position).getImageUrl()!=0)

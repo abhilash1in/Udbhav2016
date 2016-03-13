@@ -12,12 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.msrit.abhilash.udbhavtake1.Main.Activities.EventDetailsActivity;
-import com.msrit.abhilash.udbhavtake1.Main.Data.Data;
 import com.msrit.abhilash.udbhavtake1.Main.Data.EventData;
 import com.msrit.abhilash.udbhavtake1.Main.Data.ItemData;
 import com.msrit.abhilash.udbhavtake1.Main.Interface.MyAdapterEvents;
 import com.msrit.abhilash.udbhavtake1.Main.Interface.RecyclerItemClickListener;
-import com.msrit.abhilash.udbhavtake1.Old.OneFragment;
 import com.msrit.abhilash.udbhavtake1.R;
 
 import java.util.ArrayList;
@@ -109,11 +107,13 @@ public class TwoFragment2 extends android.support.v4.app.Fragment{
                         // TODO Handle item click
 
                         ParticularEvent = events.get(position).getParticularEvent();
-
-                        Intent intent = new Intent(view.getContext(),EventDetailsActivity.class);
+                        if (ParticularEvent != null) {
+                            Intent intent = new Intent(view.getContext(),EventDetailsActivity.class);
                         /*intent.putExtra("event_name",name.getText().toString());*/
-                        intent.putExtra("event_name","Event Name");
-                        (view.getContext()).startActivity(intent);
+                            intent.putExtra("event_name","Event Name");
+                            (view.getContext()).startActivity(intent);
+                        }
+
                         /*Log.v("itemclick","list item: "+name.getText().toString());*/
                     }
                 })

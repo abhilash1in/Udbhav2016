@@ -12,7 +12,8 @@ public class ItemData {
     private String description = "Description";
     private int imageUrl;
     private ArrayList<ItemData> events;
-    EventData particularEvent = new EventData();
+    boolean inter;
+    private EventData particularEvent = new EventData();
 
 
     /*//TODO delete this constructor
@@ -23,24 +24,23 @@ public class ItemData {
         this.description=description;
     }*/
 
-    public ItemData(String title,String description,int imageUrl,EventData particularEvent){
+    public ItemData(String title,int imageUrl,EventData particularEvent, boolean inter){
         //events data
         this.title = title;
         this.imageUrl = imageUrl;
-        this.description=description;
         this.particularEvent=particularEvent;
+        this.inter=inter;
     }
 
 
-    public ItemData(String title,String description,int imageUrl,ArrayList<ItemData> events){
+    public ItemData(String title,int imageUrl,ArrayList<ItemData> events){
         //category data
         this.title = title;
         this.imageUrl = imageUrl;
-        this.description=description;
         this.events=events;
     }
 
-    // getters & setters
+    // getters
     public String getTitle()
     {
         return this.title;
@@ -49,15 +49,14 @@ public class ItemData {
     {
         return this.imageUrl;
     }
-    public String getDescription()
-    {
-        return this.description;
-    }
     public ArrayList<ItemData> getEvents()
     {
         return this.events;
     }
     public EventData getParticularEvent() {
         return particularEvent;
+    }
+    public boolean isInter() {
+        return this.inter;
     }
 }

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="30dp"
+    android:paddingTop="20dp">
+
+    <TextView
+        android:id="@+id/first_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="First:"
+        android:textSize="20sp"
+        android:textColor="#000"/>
+    <TextView
+        android:id="@+id/first_winner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="First place winner, college name"
+        android:paddingBottom="30dp"/>
+    <TextView
+        android:id="@+id/second_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Second:"
+        android:textSize="20sp"
+        android:textColor="#000"/>
+    <TextView
+        android:id="@+id/second_winner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Second place winner, college name"
+        android:paddingBottom="30dp"/>
+    <TextView
+        android:id="@+id/third_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Third:"
+        android:textSize="20sp"
+        android:textColor="#000"/>
+    <TextView
+        android:id="@+id/third_winner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Third place winner, college name"/>
+
+</LinearLayout>

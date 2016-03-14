@@ -27,9 +27,11 @@ public class Data {
     }
     public static ArrayList<ItemData> getLitEvents() {
         final ArrayList<ItemData> LitEvents = new ArrayList<>();
+        LitEvents.add(new ItemData("Inter-College events",0,null,true));
         LitEvents.add(new ItemData("Dumb Charades", R.mipmap.icon2,getLitEvent0Data(),true));
         LitEvents.add(new ItemData("Debate - English",R.mipmap.icon2,getLitEvent1Data(),true));
         LitEvents.add(new ItemData("General Quiz", R.mipmap.icon2,getLitEvent10Data(),true));
+        LitEvents.add(new ItemData("Intra-College events",0,null,false));
         LitEvents.add(new ItemData("Debate - Kannada", R.mipmap.icon2,getLitEvent2Data(),false));
         LitEvents.add(new ItemData("Potpourri",  R.mipmap.icon2,getLitEvent3Data(),false));
         LitEvents.add(new ItemData("Elocution", R.mipmap.icon2,getLitEvent4Data(),false));
@@ -45,10 +47,12 @@ public class Data {
 
     public static ArrayList<ItemData> getArtEvents() {
         final ArrayList<ItemData> ArtEvents = new ArrayList<>();
+        ArtEvents.add(new ItemData("Inter-College events",0,null,true));
         ArtEvents.add(new ItemData("On Spot Painting", R.mipmap.icon2,getArtEvent1Data(),true));
         ArtEvents.add(new ItemData("Collage",R.mipmap.icon2,getArtEvent2Data(),true));
         ArtEvents.add(new ItemData("Face Painting", R.mipmap.icon2,getArtEvent6Data(),true));
         ArtEvents.add(new ItemData("Face Painting", R.mipmap.icon2,getArtEvent6Data(),true));
+        ArtEvents.add(new ItemData("Intra-College events",0,null,false));
         ArtEvents.add(new ItemData("Cartooning", R.mipmap.icon2,getArtEvent0Data(),false));
         ArtEvents.add(new ItemData("By 2 Canvas", R.mipmap.icon2,getArtEvent3Data(),false));
         ArtEvents.add(new ItemData("Clay Modelling", R.mipmap.icon2,getArtEvent4Data(),false));
@@ -63,6 +67,7 @@ public class Data {
 
     public static ArrayList<ItemData> getMusicEvents() {
         final ArrayList<ItemData> MusicEvents = new ArrayList<>();
+        MusicEvents.add(new ItemData("Inter-College events",0,null,true));
         MusicEvents.add(new ItemData("Western Group Music", R.mipmap.icon2,getMusicEvent0Data(),true));
         MusicEvents.add(new ItemData("Indian Group Music", R.mipmap.icon2,getMusicEvent1Data(),true));
         MusicEvents.add(new ItemData("Western Acoustics Solo",  R.mipmap.icon2,getMusicEvent2Data(),true));
@@ -72,6 +77,7 @@ public class Data {
         MusicEvents.add(new ItemData("Semi - Classical Vocal Solo", R.mipmap.icon2,getMusicEvent6Data(),true));
         MusicEvents.add(new ItemData("Classical Instrumental Solo",  R.mipmap.icon2,getMusicEvent7Data(),true));
         MusicEvents.add(new ItemData("Beat Boxing",  R.mipmap.icon2,getMusicEvent8Data(),true));
+        MusicEvents.add(new ItemData("Intra-College events",0,null,false));
         MusicEvents.add(new ItemData("Antaakshari",  R.mipmap.icon2,getMusicEvent9Data(),false));
         MusicEvents.add(new ItemData("Karaoke", R.mipmap.icon2,getMusicEvent10Data(),false));
 
@@ -81,6 +87,7 @@ public class Data {
 
     public static ArrayList<ItemData> getTheatreEvents() {
         final ArrayList<ItemData> TheatreEvents = new ArrayList<>();
+        TheatreEvents.add(new ItemData("Inter-College events",0,null,true));
         TheatreEvents.add(new ItemData("One Act Play", R.mipmap.icon2,getTheatreEvent0Data(),true));
         TheatreEvents.add(new ItemData("Skit", R.mipmap.icon2,getTheatreEvent1Data(),true));
         TheatreEvents.add(new ItemData("Short Films", R.mipmap.icon2,getTheatreEvent2Data(),true));
@@ -91,29 +98,34 @@ public class Data {
 
     public static ArrayList<ItemData> getDanceEvents() {
         final ArrayList<ItemData> DanceEvents = new ArrayList<>();
+        DanceEvents.add(new ItemData("Inter-College events",0,null,true));
         DanceEvents.add(new ItemData("Dance As You Like", R.mipmap.icon2,getDanceEvent1Data(),true));
         DanceEvents.add(new ItemData("Indian Contemporary Group Dance",R.mipmap.icon2,getDanceEvent2Data(),true));
         DanceEvents.add(new ItemData("Western Group Dance",R.mipmap.icon2,getDanceEvent3Data(),true));
         DanceEvents.add(new ItemData("Street Dance",  R.mipmap.icon2,getDanceEvent4Data(),true));
+        DanceEvents.add(new ItemData("Intra-College events",0,null,false));
         DanceEvents.add(new ItemData("Classical Dance Solo", R.mipmap.icon2,getDanceEvent0Data(),false));
         return DanceEvents;
     }
 
     public static ArrayList<ItemData> getUdbhavCupEvents() {
         final ArrayList<ItemData> UdbhavCupEvents = new ArrayList<>();
-        UdbhavCupEvents.add(new ItemData("Badminton", R.mipmap.icon2,getUdbCupEvent0Data(),false));
-        UdbhavCupEvents.add(new ItemData("Basketball",  R.mipmap.icon2,getUdbCupEvent1Data(),false));
-        UdbhavCupEvents.add(new ItemData("Cricket",  R.mipmap.icon2,getUdbCupEvent2Data(),false));
-        UdbhavCupEvents.add(new ItemData("Football", R.mipmap.icon2,getUdbCupEvent3Data(),false));
+        UdbhavCupEvents.add(new ItemData("Inter-College events",0,null,true));
+        UdbhavCupEvents.add(new ItemData("Badminton", R.mipmap.icon2,getUdbCupEvent0Data(),true));
+        UdbhavCupEvents.add(new ItemData("Basketball",  R.mipmap.icon2,getUdbCupEvent1Data(),true));
+        UdbhavCupEvents.add(new ItemData("Cricket",  R.mipmap.icon2,getUdbCupEvent2Data(),true));
+        UdbhavCupEvents.add(new ItemData("Football", R.mipmap.icon2,getUdbCupEvent3Data(),true));
         return UdbhavCupEvents;
     }
 
     public static ArrayList<ItemData> getMiscEvents() {
         final ArrayList<ItemData> MiscEvents = new ArrayList<>();
+        MiscEvents.add(new ItemData("Inter-College events",0,null,true));
         MiscEvents.add(new ItemData("On The Spot Photography", R.mipmap.icon2, getMiscEvent4Data(),true));
         MiscEvents.add(new ItemData("Fifa 14",  R.mipmap.icon2, getMiscEvent5Data(),true));
         MiscEvents.add(new ItemData("Dota 2",  R.mipmap.icon2, getMiscEvent6Data(),true));
         MiscEvents.add(new ItemData("Counter Strike 1.6 ", R.mipmap.icon2, getMiscEvent7Data(),true));
+        MiscEvents.add(new ItemData("Intra-College events",0,null,false));
         MiscEvents.add(new ItemData("Personality", R.mipmap.icon2, getMiscEvent0Data(),false));
         MiscEvents.add(new ItemData("Cooking",  R.mipmap.icon2, getMiscEvent1Data(),false));
         MiscEvents.add(new ItemData("Treasure Hunt",  R.mipmap.icon2, getMiscEvent2Data(),false));
@@ -137,7 +149,16 @@ public class Data {
                 "\n \n • Contestants may not change/shuffle teams after the prelims" +
                 "\n \n • Number/nature of rounds is up to the DC master" +
                 "\n \n • Contestants may not speak; they may use only established codes, no dropping. More rules can be specified by the DC master" +
-                "\n \n • Contestants may not use vulgar forms of expressions in the event");
+                "\n \n • Contestants may not use vulgar forms of expressions in the event"+
+                "\n \n • Event will be divided into 2 : Prelims and Finals"+
+                "\n \n \n Prelims : "+
+                "\n \n • Team of 3."+
+                "\n \n • Up to 2 drops allowed and then you need switch."+
+                "\n \n • Will contain movies and TV shows"+
+                "\n \n \n Finals: "+
+                "\n \n • Rounds will be decided by the DC master."+
+                "\n \n \n \n 9. Prelims for MSRIT contestants will be held on 28th of March. "
+        );
         return Event;
     }
 

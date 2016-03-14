@@ -154,52 +154,53 @@ public class RegisterFragment extends android.support.v4.app.Fragment {
             while (it2.hasNext())
             {
                 final ItemData id2= it2.next();
-                CheckBox cb = new CheckBox(getContext());
-                cb.setText(id2.getTitle());
-                cbcount++;
+                if(id2.getParticularEvent()!=null&&id2.isInter()) {
+                    CheckBox cb = new CheckBox(getContext());
+                    cb.setText(id2.getTitle());
+                    cbcount++;
 
 
-                final LinearLayout etll = new LinearLayout(getContext());
-                LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                layoutParams.setMargins(50, 10, 10, 0);
-                etll.setLayoutParams(layoutParams);
-                etll.setOrientation(LinearLayout.VERTICAL);
-                etll.setId(R.id.etllid);
-                etll.setVisibility(View.GONE);
+                    final LinearLayout etll = new LinearLayout(getContext());
+                    LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                    layoutParams.setMargins(50, 10, 10, 0);
+                    etll.setLayoutParams(layoutParams);
+                    etll.setOrientation(LinearLayout.VERTICAL);
+                    etll.setId(R.id.etllid);
+                    etll.setVisibility(View.GONE);
 
-                cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                        if (!isChecked) {
-                            etll.setVisibility(View.GONE);
-                        } else {
-                            etll.setVisibility(View.VISIBLE);
-                            etll.requestFocus();
+                    cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                        @Override
+                        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                            if (!isChecked) {
+                                etll.setVisibility(View.GONE);
+                            } else {
+                                etll.setVisibility(View.VISIBLE);
+                                etll.requestFocus();
+                            }
                         }
+                    });
+
+                    allcbs.add(cb);
+                    cbll.addView(cb);
+                    cbll.addView(etll);
+
+                    int p_size = id2.getParticularEvent().getSize();
+                    table.add(p_size);
+                    for (int i = 0; i < p_size; i++) {
+                        etcount++;
+                        LinearLayout etline = new LinearLayout(getContext());
+                        etline.setOrientation(LinearLayout.HORIZONTAL);
+                        TextView tvline = new TextView(getContext());
+                        tvline.setText("" + (i + 1) + ". ");
+                        etline.addView(tvline);
+                        EditText et = new EditText(getContext());
+                        et.setLayoutParams(new LinearLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT));
+                        et.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_SENTENCES);
+                        et.setSingleLine(true);
+                        allets.add(et);
+                        etline.addView(et);
+                        etll.addView(etline);
                     }
-                });
-
-                allcbs.add(cb);
-                cbll.addView(cb);
-                cbll.addView(etll);
-
-                int p_size = id2.getParticularEvent().getSize();
-                table.add(p_size);
-                for(int i=0;i<p_size;i++)
-                {
-                    etcount++;
-                    LinearLayout etline = new LinearLayout(getContext());
-                    etline.setOrientation(LinearLayout.HORIZONTAL);
-                    TextView tvline = new TextView(getContext());
-                    tvline.setText(""+(i+1)+". ");
-                    etline.addView(tvline);
-                    EditText et = new EditText(getContext());
-                    et.setLayoutParams(new LinearLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT));
-                    et.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_SENTENCES);
-                    et.setSingleLine(true);
-                    allets.add(et);
-                    etline.addView(et);
-                    etll.addView(etline);
                 }
 
             }

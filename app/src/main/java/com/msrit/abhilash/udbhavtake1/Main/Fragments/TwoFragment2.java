@@ -25,11 +25,13 @@ import java.util.List;
 import java.util.stream.Collectors;*/
 
 
+
 public class TwoFragment2 extends android.support.v4.app.Fragment{
 
     public static EventData ParticularEvent;
     static ArrayList<ItemData> events;
-
+    int n=1;
+    boolean headings_added = false;
     public TwoFragment2() {
         // Required empty public constructor
     }
@@ -54,6 +56,21 @@ public class TwoFragment2 extends android.support.v4.app.Fragment{
 
         ItemData particularCategory = OneFragment2.particularCategory;
         events=particularCategory.getEvents();
+
+        Log.v("bool",""+headings_added);
+
+        if(headings_added==false)
+        {
+            while(events.get(n).isInter())
+            {
+                n++;
+                if(n==events.size())
+                    break;
+            }
+            Log.v("bool","n = "+n);
+            headings_added=true;
+        }
+
 
 
         /*for(int i=0;i<categories.size();i++)
@@ -97,7 +114,7 @@ public class TwoFragment2 extends android.support.v4.app.Fragment{
 
         final RecyclerView recyclerView = (RecyclerView) root.findViewById(R.id.recyclerViewTwo);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        MyAdapterEvents mAdapter = new MyAdapterEvents(events);
+        MyAdapterEvents mAdapter = new MyAdapterEvents(events,n);
         recyclerView.setAdapter(mAdapter);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.addOnItemTouchListener(

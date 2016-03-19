@@ -21,10 +21,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.msrit.abhilash.udbhavtake1.Main.Data.Data;
 import com.msrit.abhilash.udbhavtake1.Main.Data.EventData;
 import com.msrit.abhilash.udbhavtake1.Main.Fragments.TwoFragment2;
-import com.msrit.abhilash.udbhavtake1.Old.TwoFragment;
 import com.msrit.abhilash.udbhavtake1.R;
 
 public class EventDetailsActivity extends AppCompatActivity {
@@ -38,7 +36,7 @@ public class EventDetailsActivity extends AppCompatActivity {
 /*
     View registerButtonLayout;
 */
-    TextView date,time,location,rules,coordinator;
+    TextView date,time,location,rules,coordinator,size;
     String phoneNumber;
     ImageView call,sms,whatsapp;
     /*Button register;*/
@@ -92,6 +90,7 @@ public class EventDetailsActivity extends AppCompatActivity {
         date = (TextView) timingsLayout.findViewById(R.id.date);
         time = (TextView) timingsLayout.findViewById(R.id.time);
         location = (TextView) timingsLayout.findViewById(R.id.venue);
+        size = (TextView) timingsLayout.findViewById(R.id.size);
 
         rules = (TextView) rulesLayout.findViewById(R.id.rules);
 
@@ -118,6 +117,10 @@ public class EventDetailsActivity extends AppCompatActivity {
         date.setText(event.getDate());
         time.setText(event.getTime());
         location.setText(event.getVenue());
+        if(event.getSize()!=0)
+            size.setText(""+event.getSize());
+        else
+            size.setText("1/2");
         rules.setText(event.getRules());
         coordinator.setText(event.getCoordinator());
         phoneNumber = event.getPhone();
@@ -152,10 +155,9 @@ public class EventDetailsActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 try {
-                    Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phoneNumber));
+                    Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phoneNumber));
                     startActivity(intent);
                 } catch (SecurityException e) {
-                    //TODO add number to dialer, doesn't require permission
                     Toast.makeText(EventDetailsActivity.this, "You've disabled permissions to make calls through this app", Toast.LENGTH_SHORT).show();
                 }
 

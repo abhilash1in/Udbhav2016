@@ -6,7 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     card_view:cardBackgroundColor="@color/oldColorPrimaryDark"
-    card_view:cardCornerRadius="0dp"
+    card_view:cardCornerRadius="8dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginTop="10dp"
     >
     <!--card_view:cardElevation="4dp"
     card_view:cardCornerRadius="2dp"

@@ -115,6 +115,7 @@ public class TwoFragment2 extends android.support.v4.app.Fragment{
         final RecyclerView recyclerView = (RecyclerView) root.findViewById(R.id.recyclerViewTwo);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         MyAdapterEvents mAdapter = new MyAdapterEvents(events,n);
+        mAdapter.setHasStableIds(true);
         recyclerView.setAdapter(mAdapter);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.addOnItemTouchListener(

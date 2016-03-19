@@ -32,6 +32,9 @@ import com.parse.ParseQuery;
 
 import java.util.List;
 
+import pub.devrel.easypermissions.AfterPermissionGranted;
+import pub.devrel.easypermissions.EasyPermissions;
+
 /**
  * Created by Abhilash on 09/03/2016.
  */
@@ -106,7 +109,6 @@ public class ResultsFragment extends Fragment{
         return view;
     }
 
-
     private boolean isNetworkAvailable() {
         ConnectivityManager connectivityManager = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
@@ -159,10 +161,9 @@ public class ResultsFragment extends Fragment{
                                         alert.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                                             public void onClick(DialogInterface dialog, int which) {
                                                 // continue with delete
-                                                dialog.dismiss();
                                             }
-                                        })
-                                                .show();
+                                        });
+                                                alert.create().show();
                                     }
                                 })
                         );
@@ -176,6 +177,7 @@ public class ResultsFragment extends Fragment{
                     }
 
                 } else {
+                    Toast.makeText(getActivity(), "Fetching failed. Possibly due to bad internet", Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
                 }
             }

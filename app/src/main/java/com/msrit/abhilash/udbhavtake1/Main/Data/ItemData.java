@@ -13,6 +13,7 @@ public class ItemData {
     private int imageUrl;
     private ArrayList<ItemData> events;
     boolean inter;
+    private int amt;
     private EventData particularEvent = new EventData();
 
 
@@ -24,12 +25,14 @@ public class ItemData {
         this.description=description;
     }*/
 
-    public ItemData(String title,int imageUrl,EventData particularEvent, boolean inter){
+    public ItemData(String title,int imageUrl,EventData particularEvent, boolean inter, int amt){
         //events data
         this.title = title;
         this.imageUrl = imageUrl;
         this.particularEvent=particularEvent;
         this.inter=inter;
+        this.amt = amt;
+
     }
 
 
@@ -41,6 +44,10 @@ public class ItemData {
     }
 
     // getters
+
+    public int getAmt() {
+        return amt;
+    }
     public String getTitle()
     {
         return this.title;

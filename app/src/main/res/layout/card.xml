@@ -7,6 +7,7 @@
     android:layout_height="wrap_content"
     card_view:cardBackgroundColor="@color/oldColorPrimaryDark"
     card_view:cardCornerRadius="0dp"
+    android:padding="5dp"
     >
     <!--card_view:cardElevation="4dp"
     card_view:cardCornerRadius="2dp"
@@ -22,28 +23,30 @@
 
         <ImageView
             android:id="@+id/card_item_icon"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:padding="20dp"
             android:layout_centerVertical="true"
             android:src="@mipmap/ic_launcher"
             android:layout_alignParentRight="true"
             android:layout_marginRight="5dp"
+            android:alpha="0.6"
+
             />
         <TextView
             android:id="@+id/card_item_title"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
             android:layout_alignTop="@id/card_item_icon"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginRight="5dp"
-            android:textSize="25dp"
+            android:textSize="18sp"
             android:layout_alignParentLeft="true"
             android:layout_toLeftOf="@id/card_item_icon"
             android:textColor="@android:color/white"
             android:text="Item name comes here"
+            android:layout_centerVertical="true"
+            android:singleLine="true"
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:scrollHorizontally="true"/>

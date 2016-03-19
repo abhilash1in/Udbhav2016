@@ -29,7 +29,7 @@ public class ResultsAdapter extends RecyclerView.Adapter<ResultsAdapter.ViewHold
 
     public ResultsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,int viewType) {
         // create a new view
-        View itemLayoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.results_card, null);
+        View itemLayoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.results_card, parent, false);
 
         // create ViewHolder
 
@@ -67,36 +67,138 @@ public class ResultsAdapter extends RecyclerView.Adapter<ResultsAdapter.ViewHold
         if(true) {
             if (position == 0)
                 viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#2d566b"));
-            if (position == 1)
+            else if (position == 1)
                 viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#227586"));
-            if (position == 2)
+            else if (position == 2)
                 viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#871e6a"));
-            if (position == 3)
+            else if (position == 3)
                 viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#ab1656"));
-            if (position == 4)
+            else if (position == 4)
                 viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#125688"));
-            if (position == 5)
+            else if (position == 5)
                 viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#3F51B5"));
-        }
-
-        //second option
-
-        else
-        {
-            if (position == 4)
+            else if (position == 6)
                 viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#2d566b"));
-            if (position == 2)
+            else if (position == 7)
                 viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#227586"));
-            if (position == 0)
+            else if (position == 8)
                 viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#871e6a"));
-            if (position == 1)
+            else if (position == 9)
                 viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#ab1656"));
-            if (position == 5)
+            else if (position == 10)
                 viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#125688"));
-            if (position == 3)
+            else if (position == 11)
                 viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#3F51B5"));
+            else if (position == 12)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#2d566b"));
+            else if (position == 13)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#227586"));
+            else if (position == 14)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#871e6a"));
+            else if (position == 15)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#ab1656"));
+            else if (position == 16)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#125688"));
+            else if (position == 17)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#3F51B5"));
+            else if (position == 18)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#2d566b"));
+            else if (position == 19)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#227586"));
+            else if (position == 20)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#871e6a"));
+            else if (position == 21)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#ab1656"));
+            else if (position == 22)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#125688"));
+            else if (position == 23)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#3F51B5"));
+            else if (position == 24)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#2d566b"));
+            else if (position == 25)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#227586"));
+            else if (position == 26)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#871e6a"));
+            else if (position == 27)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#ab1656"));
+            else if (position == 28)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#125688"));
+            else if (position == 29)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#3F51B5"));
+            else if (position == 30)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#2d566b"));
+            else if (position == 31)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#227586"));
+            else if (position == 32)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#871e6a"));
+            else if (position == 33)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#ab1656"));
+            else if (position == 34)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#125688"));
+            else if (position == 35)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#3F51B5"));
+            else if (position == 36)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#2d566b"));
+            else if (position == 37)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#227586"));
+            else if (position == 38)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#871e6a"));
+            else if (position == 39)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#ab1656"));
+            else if (position == 40)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#125688"));
+            else if (position == 41)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#3F51B5"));
+            else if (position == 42)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#2d566b"));
+            else if (position == 43)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#227586"));
+            else if (position == 44)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#871e6a"));
+            else if (position == 45)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#ab1656"));
+            else if (position == 46)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#125688"));
+            else if (position == 47)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#3F51B5"));
+            else if (position == 48)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#2d566b"));
+            else if (position == 49)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#227586"));
+            else if (position == 50)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#871e6a"));
+            else if (position == 51)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#ab1656"));
+            else if (position == 52)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#125688"));
+            else if (position == 53)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#3F51B5"));
+            else if (position == 54)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#2d566b"));
+            else if (position == 55)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#227586"));
+            else if (position == 56)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#871e6a"));
+            else if (position == 57)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#ab1656"));
+            else if (position == 58)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#125688"));
+            else if (position == 59)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#3F51B5"));
+            else if (position == 60)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#2d566b"));
+            else if (position == 61)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#227586"));
+            else if (position == 62)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#871e6a"));
+            else if (position == 63)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#ab1656"));
+            else if (position == 64)
+                viewHolder.cardView.setCardBackgroundColor(Color.parseColor("#125688"));
+
+
         }
-        /*log("OnBindViewHolder");*/
+
 
     }
 

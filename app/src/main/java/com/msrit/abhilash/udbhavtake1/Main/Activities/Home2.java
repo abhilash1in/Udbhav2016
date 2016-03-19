@@ -10,10 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.msrit.abhilash.udbhavtake1.Main.Fragments.AboutRootFragment;
-import com.msrit.abhilash.udbhavtake1.Main.Fragments.RegisterFragment;
 import com.msrit.abhilash.udbhavtake1.Main.Fragments.ResultsRootFragment;
 import com.msrit.abhilash.udbhavtake1.Main.Fragments.RootFragment;
-import com.msrit.abhilash.udbhavtake1.Main.Fragments.StaticFragment;
 import com.msrit.abhilash.udbhavtake1.R;
 
 public class Home2 extends AppCompatActivity {
@@ -75,7 +73,7 @@ public class Home2 extends AppCompatActivity {
                 return new ResultsRootFragment();
             else
                 return new AboutRootFragment();
-                /*return new RegisterFragment();*/
+
         }
 
         @Override

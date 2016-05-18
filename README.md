@@ -8,7 +8,7 @@ Features:
 <li>Get push notifications on the latest updates about the fest</li>
 <li> Contact coordinators with a single click </li>
 <li> Links to facebook page and snapchat id </li>
-<li> Supports devices with android 4.1 all the upto 6 (Marshmellow) </li>
+<li> Supports devices with starting with Android 4.1 all the way up to 6 (Marshmellow) </li>
 <li> Material UI </li>
 </ul>
 
